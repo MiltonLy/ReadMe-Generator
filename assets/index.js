@@ -8,12 +8,12 @@ inquirer
             name: 'repoName',
         },
         {
-            message: 'Description of the App:',
-            name: 'description',
+            message: 'Technology Used',
+            name: 'tech',
         },
         {
-            message: 'Table of Contents',
-            name: 'tob',
+            message: 'Description of the App:',
+            name: 'description',
         },
         {
             message: 'installation instructions',
@@ -36,7 +36,71 @@ inquirer
             name: 'tests',
         },
         {
-            message: 'Questions?',
-            name: 'question',
+            message: 'GitHub Link',
+            name: 'githubUrl',
         },
+        {
+            message: 'LinkedIn Link',
+            name: 'linkedninUrl'
+        }
     ])
+    .then((response) =>{
+        console.log(response)
+    })
+    const readMeTemp = `
+    #${response.repoName}
+    
+    ## Table Of Content
+
+    -[Technology Used]
+    -[Project Description]
+    -[Installation]
+    -[Usage]
+    -[License]
+    -[Contributions]
+    -[Test]
+    -[Questions]
+
+    ## Technology Used
+
+    Technology Used
+    Resource URL
+
+    ${response.tech}
+
+    ## Project Description
+
+    ${response.description}
+
+    ## Installation
+
+    ${response.install}
+
+    ## Usage
+
+    ${response.usage}
+
+    ## License
+
+    ${response.license}
+
+    ## Contributions
+
+    ${response.contributing}
+
+    ## Test
+
+    ${response.test}
+
+    ## Contact
+
+    ${response.githubUrl}
+
+    ${response.linkedinUrl}
+
+    `
+    js.writeFile('README.md', readMeTemp, function(err){
+        if (err) {
+            throw err;
+        }
+    })

@@ -16,6 +16,27 @@ inquirer
             name: 'tob',
         },
         {
-            message: ''
-        }
+            message: 'installation instructions',
+            name: 'install',
+        },
+        {
+            message: 'Usage',
+            name: 'usage',
+        },
+        {
+            message: 'License',
+            name: 'license',
+        },
+        {
+            message: 'Contributing',
+            name: 'contributing',
+        },
+        {
+            message: 'Tests',
+            name: 'tests',
+        },
+        {
+            message: 'Questions?',
+            name: 'question',
+        },
     ])

@@ -36,30 +36,34 @@ inquirer
             name: 'tests',
         },
         {
+            message: 'email',
+            name: 'email',
+        },
+        {
             message: 'GitHub Link',
             name: 'githubUrl',
         },
         {
             message: 'LinkedIn Link',
-            name: 'linkedninUrl'
+            name: 'linkedinUrl'
         }
     ])
     .then((response) =>{
         console.log(response)
-    })
+    
     const readMeTemp = `
     #${response.repoName}
     
     ## Table Of Content
 
-    -[Technology Used]
-    -[Project Description]
-    -[Installation]
-    -[Usage]
-    -[License]
-    -[Contributions]
-    -[Test]
-    -[Questions]
+    -[Technology Used](#Technology Used)
+    -[Project Description](#Project Description)
+    -[Installation](#Installation)
+    -[Usage](#Usage)
+    -[License](#License)
+    -[Contributions](#Contributions)
+    -[Test](#Test)
+    -[Questions](#Question)
 
     ## Technology Used
 
@@ -90,9 +94,11 @@ inquirer
 
     ## Test
 
-    ${response.test}
+    ${response.tests}
 
     ## Contact
+
+    ${response.email}
 
     ${response.githubUrl}
 
@@ -102,5 +108,6 @@ inquirer
     js.writeFile('README.md', readMeTemp, function(err){
         if (err) {
             throw err;
-        }
+        };
+    });
     })

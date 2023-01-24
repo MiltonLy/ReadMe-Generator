@@ -17,7 +17,12 @@ This app runs on node.js so first you must install node.js through homebrew or t
 
 ```node index.js ```
 
-this will run the function to generate a new ReadMe after filling out the questions that the terminal prompts.
+This will run the function to generate a new ReadMe after filling out the questions that the terminal prompts.
+
+Below is a link to a video walk through of how it app will run.
+
+https://www.youtube.com/watch?v=WuYVs7-n_Pg
+
 
 ## Learning Point
 
